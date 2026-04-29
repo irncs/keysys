@@ -9,17 +9,21 @@ local HttpService = game:GetService("HttpService")
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
 
 local success, response = pcall(function()
-    return game:HttpGet("https://roblox-key-system--ironicfigures.replit.app/check?key=KEY&hwid=HWID" .. HttpService:UrlEncode(script_key) .. "&hwid=" .. HttpService:UrlEncode(HWID))
+    return game:HttpGet(
+        "https://roblox-key-system--ironicfigures.replit.app/check"
+        .. "?key=" .. HttpService:UrlEncode(script_key)
+        .. "&hwid=" .. HttpService:UrlEncode(HWID)
+    )
 end)
 
 if not success or response ~= "valid" then
-    print("❌ Invalid or Revoked Key!")
+    print("Invalid or Revoked Key!")
     task.wait(1.5)
     game:GetService("Players").LocalPlayer:Kick("Invalid Key")
     return
 end
 
-print("✅ Key Accepted! Loading addicts.lol...")
+print("Key Accepted! Loading addicts.lol...")
 
 -- ====================== YOUR FULL SCRIPT ======================
 shared.Accuracy = {
