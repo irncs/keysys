@@ -9,7 +9,7 @@ local HttpService = game:GetService("HttpService")
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
 
 local success, response = pcall(function()
-    return game:HttpGet("https://roblox-key-system.ironicfigures.repl.co/check?key=" .. HttpService:UrlEncode(script_key) .. "&hwid=" .. HttpService:UrlEncode(HWID))
+    return game:HttpGet("https://replit.com/join/brxwwwdube-ironicfigures" .. HttpService:UrlEncode(script_key) .. "&hwid=" .. HttpService:UrlEncode(HWID))
 end)
 
 if not success or response ~= "valid" then
